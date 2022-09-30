@@ -12,11 +12,19 @@ public class Pet {
     @Column(name = "name")
     private String name;
 
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
     @Column(name = "description")
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id", nullable = false)
+    @JoinColumn(name = "owner_id", nullable = true)
     private Owner owner;
 
 
