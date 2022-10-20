@@ -18,7 +18,7 @@ public class OwnerController {
 
 
     @GetMapping("/all")
-    public List<Owner> getOwneres()
+    public List<Owner> getOwners()
     {
         List<Owner> ownersList = this.ownerService.getAllOwners();
         return ownersList;

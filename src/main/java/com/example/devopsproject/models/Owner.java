@@ -10,6 +10,14 @@ public class Owner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Column(name = "name")
     private String name;
 
@@ -36,6 +44,12 @@ public class Owner {
     }
 
     public Owner(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Owner(Long id,String name, int age) {
+        this.id = id;
         this.name = name;
         this.age = age;
     }
