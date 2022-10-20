@@ -52,7 +52,6 @@ public class OwnerControllerTest {
                 .andExpect(jsonPath("$[1].age", is(25)));
     }
 
-
     @Test
     @DisplayName("GET /owner/1")
     void testGetOwnerById() throws Exception {

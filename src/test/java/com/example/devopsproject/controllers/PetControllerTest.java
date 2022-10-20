@@ -1,9 +1,6 @@
 package com.example.devopsproject.controllers;
-import com.example.devopsproject.models.Owner;
 import com.example.devopsproject.models.Pet;
-import com.example.devopsproject.services.OwnerService;
 import com.example.devopsproject.services.PetService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
