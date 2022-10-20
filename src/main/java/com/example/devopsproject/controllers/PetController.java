@@ -25,7 +25,6 @@ public class PetController {
         return petsList;
     }
 
-
     @GetMapping("/{petId}")
     public Pet getPetById(@PathVariable("petId") Long petId)
     {
