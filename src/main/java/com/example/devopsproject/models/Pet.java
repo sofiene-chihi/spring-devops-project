@@ -27,6 +27,14 @@ public class Pet {
         this.owner = owner;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Column(name = "description")
     private String description;
 
