@@ -13,6 +13,15 @@ pipeline {
                 }
             }
         }
+
+        stage("unit testing") {
+
+            steps {
+                script{
+                    gv.unit_testing()
+                }
+            }
+        }
         stage("build image") {
             steps {
                 script {
