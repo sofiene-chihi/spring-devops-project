@@ -10,7 +10,6 @@ def buildImage() {
 
 def testApp() {
     echo "testing the application..."
-    sh 'mvn package insta'
     sh 'mvn clean test'
 }
 
