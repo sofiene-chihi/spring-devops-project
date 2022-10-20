@@ -8,12 +8,10 @@ def buildImage() {
     }
 }
 
-def unit_testing() {
-    sh 'mvn test'
-}
-
 def testApp() {
     echo "testing the application..."
+    sh 'mvn package insta'
+    sh 'mvn clean test'
 }
 
 def deployApp() {
