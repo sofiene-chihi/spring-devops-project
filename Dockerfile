@@ -7,10 +7,7 @@ COPY . /home/project
 WORKDIR /home/project
 # Compile and package the application to an executable JAR
 
-RUN mvn dependency:resolve
-
-#RUN mvn install -Dmaven.test.skip=true
-RUN mvn install
+RUN mvn install -Dmaven.test.skip=true
 
 # For Java 11,
 
