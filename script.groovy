@@ -10,8 +10,15 @@ def buildImage() {
 
 def testApp() {
     echo "testing the application..."
-    sh 'mvn test'
+    // sh 'mvn test'
 }
+
+def sonarScan() {
+    echo "Running sonarQube scan..."
+    def runSonar = '"bash runSonarQube.sh"'
+    sshagent (credentials: ['jenkins-server']) {
+        sh "ssh -o StrictHostKeyChecking=no root@194.195.246.28 ${runSonar}"
+    }}
 
 def deployApp() {
     echo 'deploying the application...'

@@ -22,6 +22,13 @@ pipeline {
                 }
             }
         }
+        stage("sonarQube scan") {
+            steps {
+                script {
+                    gv.sonarScan()
+                }
+            }
+        }
         stage("build image") {
             steps {
                 script {
