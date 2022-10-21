@@ -10,21 +10,13 @@ public class Owner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @Column(name = "name")
     private String name;
 
     @Column(name = "age")
     private int age;
 
-    @OneToMany
+    @OneToMany(mappedBy = "owner")
     private List<Pet> pets;
 
     public String getName() {
@@ -41,6 +33,14 @@ public class Owner {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Owner(String name, int age) {

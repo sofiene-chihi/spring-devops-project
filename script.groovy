@@ -10,7 +10,7 @@ def buildImage() {
 
 def testApp() {
     echo "testing the application..."
-    sh 'mvn clean test'
+    sh 'mvn test'
 }
 
 def deployApp() {

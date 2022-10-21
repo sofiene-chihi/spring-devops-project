@@ -15,22 +15,19 @@ pipeline {
                 }
             }
         }
-
+        stage("test") {
+            steps {
+                script{
+                    gv.testApp()
+                }
+            }
+        }
         stage("build image") {
             steps {
                 script {
                     gv.buildImage()
                 }
             }
-        }
-        stage("test") {
-
-            steps {
-                script{
-                    gv.testApp()
-                }
-            }
-
         }
         stage("deploy") {
             steps {
