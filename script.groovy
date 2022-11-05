@@ -16,22 +16,22 @@ def testApp() {
 def sonarScan() {
     echo "Running sonarQube scan..."
     def runSonar = '"bash runSonarQube.sh"'
-    sshagent (credentials: ['jenkins-server']) {
-        sh "ssh -o StrictHostKeyChecking=no root@194.195.246.28 ${runSonar}"
+    sshagent (credentials: ['sonar-server']) {
+        sh "ssh -o StrictHostKeyChecking=no sofiene@192.168.122.144 ${runSonar}"
     }}
 
 def deployApp() {
     echo 'deploying the application...'
     def composeRun = '"docker-compose up -d"'
-    sshagent (credentials: ['dev-server']) {
-        sh "ssh -o StrictHostKeyChecking=no root@139.144.79.56 ${composeRun}"
+    sshagent (credentials: ['deployment-server']) {
+        sh "ssh -o StrictHostKeyChecking=no sofiene@192.168.122.101 ${composeRun}"
     }
 }
 
 def cleanUntaggedImages(){
     def cleanImages = 'docker image prune --force --filter "dangling=true"'
-    sshagent (credentials: ['dev-server']) {
-        sh "ssh -o StrictHostKeyChecking=no root@139.144.79.56 ${cleanImages}"
+    sshagent (credentials: ['deployment-server']) {
+        sh "ssh -o StrictHostKeyChecking=no sofiene@192.168.122.101 ${cleanImages}"
     }
 }
 

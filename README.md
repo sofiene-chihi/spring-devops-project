@@ -6,14 +6,18 @@ This project is created to test the process of a **CI/CD pipeline** using **Jenk
 We don't really care about the content of the application more than about the process that our application will go through.
 Our application is a simple pet store where we have the owners and their pets.
 
-![](./assets/images/class%20diagram.drawio.png)
+<p align="center">
+  <img src="./assets/images/class_diagram.drawio.png" title="hover text">
+</p>
 
 The process of our pipeline will follow these steps : 
 * Running the unit tests and scanning the code using the sonarQube
 * Building the docker image for our application and push it to dockerhub
 * Deploying the application in a deployment server 
 
-![](./assets/images/pipeline.drawio.png)
+<p align="center">
+  <img src="./assets/images/pipeline.drawio.png" title="hover text">
+</p>
 
 ## Test the application locally
 * First thing to do after cloning the application is open it with and IDE and specifying that it's a maven project in order to check for the required dependencies ( used packages ) in the POM.xml file.
@@ -28,4 +32,4 @@ mvn test
 ```
 
 ## Pipeline steps in details
-  //to be continued
+  
