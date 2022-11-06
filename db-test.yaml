@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  mysql_db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=sofiene #${MYSQLDB_ROOT_PASSWORD}
+      - MYSQL_DATABASE=pet_store #${MYSQLDB_DATABASE}
+    ports:
+      #${MYSQLDB_LOCAL_PORT}:${MYSQLDB_DOCKER_PORT}
+      - "3306:3306"
+    volumes:
+      - /var/lib/docker/volumes/devops-project-volume/_data:/var/lib/mysqlostgres/_data:/var/lib/postgresql/data

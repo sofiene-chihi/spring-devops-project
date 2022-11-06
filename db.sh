@@ -1,1 +1,0 @@
-docker run -d -e MYSQL_ROOT_PASSWORD=sofiene --name pet-store-db -e MYSQL_DATABASE=pet_store -p 3306:3306 -v /var/lib/docker/volumes/devops-project-volume/_data:/var/lib/mysql mysql:latest
