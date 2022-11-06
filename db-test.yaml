@@ -11,4 +11,4 @@ services:
       #${MYSQLDB_LOCAL_PORT}:${MYSQLDB_DOCKER_PORT}
       - "3306:3306"
     volumes:
-      - /var/lib/docker/volumes/devops-project-volume/_data:/var/lib/mysqlostgres/_data:/var/lib/postgresql/data
+      - /var/lib/docker/volumes/devops-project-volume/_data:/var/lib/mysql
