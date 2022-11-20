@@ -4,16 +4,16 @@ def gv
 
 pipeline {
     agent any
+    environment {
+        DEPLOYMENT_SERVER_IP = "192.168.122.101"
+        DEPLOYMENT_SERVER_USER= "sofiene"
+        SONARQUBE_SERVER_IP ="192.168.122.144"
+        SONARQUBE_SERVER_USER="sofiene"
+    }
     tools {
         maven 'maven'
     }
     stages {
-        environment {
-            DEPLOYMENT_SERVER_IP = "192.168.122.101"
-            DEPLOYMENT_SERVER_USER= "sofiene"
-            SONARQUBE_SERVER_IP ="192.168.122.144"
-            SONARQUBE_SERVER_USER="sofiene"
-        }
         stage("init") {
             steps {
                 script {
