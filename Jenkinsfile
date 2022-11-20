@@ -24,7 +24,8 @@ pipeline {
         stage("SonarQube Testing and Scan") {
             steps {
                 script {
-                    gv.sonarScan(${SONARQUBE_SERVER_IP},${SONARQUBE_SERVER_USER})
+                echo "${SONARQUBE_SERVER_IP} , ${SONARQUBE_SERVER_USER}"
+                    gv.sonarScan("${SONARQUBE_SERVER_IP}","${SONARQUBE_SERVER_USER}")
                 }
             }
         }
