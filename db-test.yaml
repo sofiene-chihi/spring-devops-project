@@ -1,3 +1,4 @@
+# This yaml file is used to run the database before running the application for testing
 version: '3'
 
 services:

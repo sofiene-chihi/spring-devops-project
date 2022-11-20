@@ -8,16 +8,11 @@ def buildImage() {
     }
 }
 
-def testApp() {
-    echo "testing the application..."
-    // sh 'mvn test'
-}
-
-def sonarScan() {
+def sonarScan(String serverIp, String serverUser) {
     echo "Running sonarQube scan..."
     def runSonar = '"bash runSonarQube.sh"'
     sshagent (credentials: ['sonar-server']) {
-        sh "ssh -o StrictHostKeyChecking=no sofiene@192.168.122.144 ${runSonar}"
+        sh "ssh -o StrictHostKeyChecking=no ${serverUser}@${serverIp} ${runSonar}"
     }}
 
 def deployApp() {

@@ -8,6 +8,12 @@ pipeline {
         maven 'maven'
     }
     stages {
+        environment {
+            DEPLOYMENT_SERVER_IP = "192.168.122.101"
+            DEPLOYMENT_SERVER_USER= "sofiene"
+            SONARQUBE_SERVER_IP ="192.168.122.144"
+            SONARQUBE_SERVER_USER="sofiene"
+        }
         stage("init") {
             steps {
                 script {
@@ -15,17 +21,10 @@ pipeline {
                 }
             }
         }
-        stage("test") {
-            steps {
-                script{
-                    gv.testApp()
-                }
-            }
-        }
-        stage("sonarQube scan") {
+        stage("SonarQube Testing and Scan") {
             steps {
                 script {
-                    gv.sonarScan()
+                    gv.sonarScan(${SONARQUBE_SERVER_IP},${SONARQUBE_SERVER_USER})
                 }
             }
         }
