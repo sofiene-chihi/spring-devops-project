@@ -45,24 +45,22 @@ pipeline {
 
     }
 
-/*
     post {
         success {
             script {
                 echo 'removing the old images from the server..'
-                gv.cleanUntaggedImages()
-                emailext body: 'Your backend pipeline finished the buit and deployment of the project successfully', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Success of digihunt pipeline stages'
+                gv.cleanUntaggedImages("${DEPLOYMENT_SERVER_IP}","${DEPLOYMENT_SERVER_USER}")
+                //emailext body: 'Your backend pipeline finished the buit and deployment of the project successfully', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Success of digihunt pipeline stages'
 
             }
         }
         failure {
             script {
                 echo 'removing the old images from the server..'
-                gv.cleanUntaggedImages()
-                emailext body: 'Your backend pipeline failed the built and deployment of the project successfully', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Failure of digihunt pipeline stages'
+                gv.cleanUntaggedImages("${DEPLOYMENT_SERVER_IP}","${DEPLOYMENT_SERVER_USER}")
+                //emailext body: 'Your backend pipeline failed the built and deployment of the project successfully', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Failure of digihunt pipeline stages'
 
             }
         }
     }
-*/
 }

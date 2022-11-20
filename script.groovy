@@ -23,10 +23,10 @@ def deployApp(String serverIp, String serverUser) {
     }
 }
 
-def cleanUntaggedImages(){
+def cleanUntaggedImages(String serverIp, String serverUser){
     def cleanImages = 'docker image prune --force --filter "dangling=true"'
     sshagent (credentials: ['deployment-server']) {
-        sh "ssh -o StrictHostKeyChecking=no sofiene@192.168.122.101 ${cleanImages}"
+        sh "ssh -o StrictHostKeyChecking=no ${serverUser}@${serverIp} ${cleanImages}"
     }
 }
 
