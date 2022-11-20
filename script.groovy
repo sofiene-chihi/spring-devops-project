@@ -15,11 +15,11 @@ def sonarScan(String serverIp, String serverUser) {
         sh "ssh -o StrictHostKeyChecking=no ${serverUser}@${serverIp} ${runSonar}"
     }}
 
-def deployApp() {
+def deployApp(String serverIp, String serverUser) {
     echo 'deploying the application...'
     def composeRun = '"docker-compose up -d"'
     sshagent (credentials: ['deployment-server']) {
-        sh "ssh -o StrictHostKeyChecking=no sofiene@192.168.122.101 ${composeRun}"
+        sh "ssh -o StrictHostKeyChecking=no ${serverUser}@${serverIp} ${composeRun}"
     }
 }
 
