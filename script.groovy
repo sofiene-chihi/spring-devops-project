@@ -10,7 +10,7 @@ def buildImage() {
 
 def sonarScan(String serverIp, String serverUser) {
     echo "Running sonarQube scan..."
-    def runSonar = '"bash runSonarQube.sh"'
+    def runSonar = '"export MYSQLDB_ROOT_PASSWORD=sofiene MYSQLDB_DATABASE=pet_store MYSQLDB_LOCAL_PORT=3306 MYSQLDB_DOCKER_PORT=3306 && bash runSonarQube.sh"'
     sshagent (credentials: ['sonar-server']) {
         sh "ssh -o StrictHostKeyChecking=no ${serverUser}@${serverIp} ${runSonar}"
     }}
