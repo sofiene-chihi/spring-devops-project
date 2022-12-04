@@ -8,6 +8,11 @@ def buildImage() {
     }
 }
 
+def pushToNexus() {
+    echo "pushing the jar file to Nexus maven-snapshots repo..."
+    sh 'mvn clean deploy -Dmaven.test.skip=true'
+}
+
 def sonarScan(String serverIp, String serverUser) {
     echo "Running sonarQube scan..."
     def runSonar = '"export MYSQLDB_ROOT_PASSWORD=sofiene MYSQLDB_DATABASE=pet_store MYSQLDB_LOCAL_PORT=3306 MYSQLDB_DOCKER_PORT=3306 && bash runSonarQube.sh"'
