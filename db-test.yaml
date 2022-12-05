@@ -11,4 +11,7 @@ services:
     ports:
       - ${MYSQLDB_LOCAL_PORT}:${MYSQLDB_DOCKER_PORT}
     volumes:
-      - /var/lib/docker/volumes/devops-project-volume/_data:/var/lib/mysql
+      - pet-store-volume:/var/lib/mysql
+
+volumes:
+  pet-store-volume:
