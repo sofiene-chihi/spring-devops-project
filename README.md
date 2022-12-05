@@ -7,7 +7,7 @@ We don't really care about the content of the application more than about the pr
 Our application is a simple pet store where we have the owners and their pets.
 
 <p align="center">
-  <img src="./assets/images/class_diagram.drawio.png" title="hover text">
+  <img src="./assets/images/class_diagram.drawio.png" style="width: 18rem" title="hover text">
 </p>
 
 The process of our pipeline will follow these steps : 
