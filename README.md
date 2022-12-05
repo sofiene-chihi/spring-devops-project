@@ -36,4 +36,3 @@ mvn test
 We'll go throught all the steps of our pipeline from pushing or merging a PR into our master branch to the deployment of our app in a deployment server.
 
 For that purpose, I used 4 VMs running ubuntu server and generated the SSH keys to connect to each one of them.
-
