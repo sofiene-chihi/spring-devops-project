@@ -11,6 +11,7 @@ pipeline {
         SONARQUBE_SERVER_USER="sofiene"
         JENKINS_SERVER_IP ="192.168.122.251"
         JENKINS_SERVER_USER="sofiene"
+        IMAGE_NAME="SPRING-APP-1.0.0"
     }
     tools {
         maven 'maven'
