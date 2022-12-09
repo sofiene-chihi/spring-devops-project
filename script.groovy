@@ -2,9 +2,9 @@
 def buildImage() {
     echo "building the docker image..."
     withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        sh "docker build -t sofienechihi/my-repo:spring-app-${IMAGE_NAME} ."
+        sh "docker build -t sofienechihi/my-repo:spring-app-${IMAGE_VERSION} ."
         sh "echo $PASS | docker login -u $USER --password-stdin"
-        sh "docker push sofienechihi/my-repo:spring-app-${IMAGE_NAME}"
+        sh "docker push sofienechihi/my-repo:spring-app-${IMAGE_VERSION}"
     }
 }
 
